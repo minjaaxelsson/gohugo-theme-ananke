@@ -1,0 +1,38 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+<article class=" dark-gray b--black-10 center">
+    <a href="{{.RelPermalink}}" class="color-inherit dim link">
+        <img src="{{ $featured_image }}" class="db w-100" alt="Photo of a kitten looking menacing.">
+    </a>
+    <div class="pa2 ph3-ns pb3-ns">
+      <div class="dt w-100 mt1">
+        <div class="dtc">
+            <a href="{{.RelPermalink}}" class="color-inherit dim link">
+                <h1 class="f5 f4-ns mv0">{{ .Title}}</h1>
+            </a>
+        </div>
+        <!-- <div class="dtc tr">
+          <h2 class="f5 mv0">$1,000</h2>
+        </div> -->
+      </div>
+      <p class="f6 lh-copy mt2 mid-gray">
+        {{ .Summary}}
+      </p>
+      {{- partial "tags.html" . -}}
+    </div>
+  </article>
+
+
+<!-- <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    {{with .CurrentSection.Title }}<span class="f6 db">{{ . }}</span>{{end}}
+    <h1 class="f3 near-black">
+      <a href="{{ .RelPermalink }}" class="link dark-gray dim">
+        {{ .Title }}
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      {{ .Summary }}
+    </div>
+    <a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">{{ $.Param "read_more_copy" | default (i18n "readMore") }}</a>
+  </div>
+</div> -->
