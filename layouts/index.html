@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+  <article class="cf f5 ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
       {{ .Content }}
     </article>
     {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
@@ -7,7 +7,7 @@
     {{range (where $.Site.Sections "Title" "in" $mainSections)}}
     {{ if .Pages }}
       <div class="pa3 pa4-ns w-100 w-70-ns center">
-        <h1 class="flex-none">
+        <h1 class="flex-none ">
           {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
         </h1>
 
@@ -16,8 +16,8 @@
         <section class="w-100 mw8">
           {{/* Range through the first $n_posts items of the section */}}
           {{ range (.Pages | first $n_posts) }}
-            <div class="relative w-100 mb4">
-              {{ .Render "summary-with-image" }}
+            <div class="w-100">
+              {{ .Render (.Parent.Param "summarystyle" | default "summary-with-image")}}
             </div>
           {{ end }}
         </section>

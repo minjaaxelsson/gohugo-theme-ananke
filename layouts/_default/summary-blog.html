@@ -1,0 +1,27 @@
+<div class="flex mb3">  
+  <div class="w-25 pr2">
+    <div class="f5 fw3 mid-gray ">
+      <a href="{{ .RelPermalink }}" class="link mid-gray dim">
+          {{ .Date | time.Format ":date_medium"}}
+
+      </a>
+
+    </div>
+  </div>
+
+  <div class="w-75">
+    <h3 class="f4 mid-gray mt0 mb0">
+      <a href="{{ .RelPermalink }}" class="link dark-gray dim">
+          {{ .Title }}
+      </a>
+    </h3>
+    <p class="mid-gray fw3 mt2">
+      {{ .Summary }}
+    </p>
+  </div>
+</div>
+
+      
+
+
+  
